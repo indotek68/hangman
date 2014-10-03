@@ -1,0 +1,20 @@
+<div class='popup modal-dialog modal-content' ng-hide="hide" >
+	<div class="modal-header">
+	    <h3 class="modal-title">Let's Play Hangman</h3>
+	</div>
+	<div class="modal-body">
+		<form ng-submit="inputWord()">
+		<label for="secret-word">Secret Word</label>
+		<input class="form-control" id="secret-word"type="text" ng-model="secretWord" placeholder="Type Here" autofocus true>
+		<label for="hint-one">Hint 1</label>
+		<input placeholder="Hint 1" type="text" class="form-control" ng-model="hintOne">
+		<label for="hint-one">Hint 2</label>
+		<input placeholder="Hint 2" type="text" class="form-control" ng-model="hintTwo">
+		<label for="hint-one">Hint 3</label>
+		<input placeholder="Hint 3" type="text" class="form-control" ng-model="hintThree">
+	</div>
+	<div class="modal-footer">
+	    <button class="btn btn-primary" ng-click="inputWord()">Let's Do This</button>
+	</div>
+	</form>
+</div>
