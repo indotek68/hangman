@@ -1,0 +1,40 @@
+<h1>Hangman</h1>
+
+<div ng-controller="gameCtrl">
+
+<%= render partial: "shared/modal" %>
+
+<div class="row game-container">
+	<div class="col-xs-6">
+		<%= render partial: "shared/hangman" %>
+	</div>
+	<div class="col-xs-6">
+		<div class="row">
+			<div ng-repeat='letter in letters'>
+				<div class="keyboard" ng-click="letterClick()" ng-show="showKeys[letter]">
+					{{letter | uppercase}}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="letter" ng-repeat="secret in secrets track by $index">
+				<div class="letter-show" ng-show="showLetter[secret]">
+				{{secret | uppercase }}</div>
+				<div class="underScore"></div>
+			</div>
+		</div>
+		<div class="row">
+			<button class="btn btn-success" ng-click="resetGame()">NEW GAME</button>
+			<button class="btn btn-warning" ng-show="hint[0]" ng-click="hintButton()">HINT 1</button>
+			<button ng-show="hint[1]" class="btn btn-warning"ng-click="hintButton()">HINT 2</button>
+			<button ng-show="hint[2]" class="btn btn-warning"ng-click="hintButton()">HINT 3</button>
+		</div>
+	</div>
+</div>
+
+
+<%= render partial: "shared/winner" %>
+<%= render partial: "shared/loser" %>
+<%= render partial: "shared/hint" %>
+
+</div>
